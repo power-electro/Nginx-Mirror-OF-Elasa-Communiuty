@@ -82,6 +82,8 @@ fi
 if [ ! -d ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv ]; then	
     mkdir ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv
 fi
+rm -rf $OPENSHIFT_TMP_DIR/*
+
 if [ ! -d ${OPENSHIFT_HOMEDIR}/app-root/runtime/srv/nginx/sbin ]; then	
 	cd $OPENSHIFT_TMP_DIR
 	wget http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz
