@@ -90,9 +90,10 @@ http {
 
         }
 		location ~* ^/(.*) {
-			proxy_set_header Host vb2-fishsmarkets.rhcloud.com;
-			proxy_redirect  http://vb2-fishsmarkets.rhcloud.com/ http://diy-elasa2.rhcloud.com/;
-			proxy_pass http://comment/$1$is_args$args;
+			#proxy_set_header Host vb2-fishsmarkets.rhcloud.com;
+			#proxy_redirect  http://vb2-fishsmarkets.rhcloud.com/ http://diy-elasa2.rhcloud.com/;
+			#proxy_pass http://comment/$1$is_args$args;
+			proxy_pass http://index/$1$is_args$args;
 		}
 		location ^~ /admincp {
                 if (!-f $request_filename) {
